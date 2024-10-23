@@ -427,7 +427,7 @@ About 2
 }
 
 .offer.separator::before {
-    background: rgba(0, 0, 0, 0) url("images/icons/line.png") no-repeat scroll 100% 100% / cover;
+    background: rgba(0, 0, 0, 0) url("icons/line.png") no-repeat scroll 100% 100% / cover;
     content: "";
     height: 100%;
     left: -43px;
@@ -2051,7 +2051,7 @@ blockquote {
 
 .about{
     height: 100%;
-    background-image: url('images/about/1.jpg');
+    background-image: url('about/1.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.9;
