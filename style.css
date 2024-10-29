@@ -56,6 +56,17 @@
 /*---------------------------------------
   02. Scroll To Top
 ----------------------------------------*/
+
+.service__section__wrap {
+    /* Remove justify-content if previously set to 'space-between' */
+    justify-content: center; /* Centers all items inside the wrap */
+}
+
+/* Optional: only apply for this row with centered items */
+.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
  #scrollUp {
     border-radius: 2px;
     bottom: 80px;
@@ -266,7 +277,7 @@ About 2
 ----------------------------------------*/ 
 
 .htc__service__area {
-    padding: 100px 0;
+    padding: 30px 0;
     background-color: #fff;
 }
 
@@ -274,13 +285,46 @@ About 2
     text-align: center;
     margin-bottom: 50px;
 }
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 .section__title h2.title__line {
-    color: #1f2d30;
+    color: #375686;
     font-size: 40px;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 20px;
+    opacity: 0; /* Start hidden */
+    visibility: hidden; /* Ensures element is invisible initially */
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Class to trigger slide-in animations */
+.slide-in-left {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 1s ease-out forwards;
 }
 
 .service__section__wrap {
@@ -297,6 +341,8 @@ About 2
 .service__thumb {
     position: relative;
     overflow: hidden;
+    border: 3px solid #377A43; /* Border with your desired color */
+    border-radius: 15px; /* Adjust this value for rounded corners */
 }
 
 .service__thumb img {
@@ -320,6 +366,8 @@ About 2
     justify-content: center;
     opacity: 0;
     transition: opacity 0.5s ease;
+    border: 3px solid #377A43; /* Border with your desired color */
+    border-radius: 15px; /* Adjust this value for rounded corners */
 }
 
 .service__thumb:hover .service__hover {
@@ -405,7 +453,7 @@ About 2
 }
 
 .offer__details p:hover {
-    color: #1f2d30;
+    color: white;
 }
 
 .offer__details h2 {
@@ -418,7 +466,7 @@ About 2
 }
 
 .offer__details h2:hover {
-    color: ##375686;
+    color: white;
     letter-spacing: 1px;
 }
 
@@ -427,7 +475,7 @@ About 2
 }
 
 .offer.separator::before {
-    background: rgba(0, 0, 0, 0) url("icons/line.png") no-repeat scroll 100% 100% / cover;
+    background: rgba(0, 0, 0, 0) url("images/icons/line.png") no-repeat scroll 100% 100% / cover;
     content: "";
     height: 100%;
     left: -43px;
@@ -480,10 +528,9 @@ About 2
   06. Project Area
 ----------------------------------------*/
 .project {
-    margin-left: -15px;
-    margin-right: -15px;
-    overflow: hidden;
-    position: relative;
+    height: 100%; /* Stretch to full height of container */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    overflow: hidden; /* Hide overflow */
 }
 
 .project__thumb {
@@ -491,17 +538,20 @@ About 2
     z-index: 4;
     transition: transform 0.5s ease-in-out;
 }
-
 .project__thumb img {
-    width: 100%;
-    display: block;
-    transition: transform 0.4s ease;
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 250px; /* Set a max height to equalize container heights */
+    object-fit: cover; /* Cover the container */
 }
 
 .project__thumb:hover img {
     transform: scale(1.1);
 }
-
+.htc__latest__project__area {
+    position: relative;
+    margin-bottom: 30%;
+}
 .zoom-icon {
     position: absolute;
     top: 50%;
@@ -592,7 +642,7 @@ About 2
 }
 
 .section__title .text--theme {
-    color: #375686; /* Add a theme color for highlighting */
+    color: #377A43; /* Add a theme color for highlighting */
 }
 
 .section__title p {
@@ -660,6 +710,8 @@ About 2
 }
 
 .team__inner {
+    padding-top: 18px;
+    padding-bottom: 18px;
     position: relative;
     overflow: hidden; /* Contain hover effects */
 }
@@ -710,7 +762,7 @@ About 2
 }
 
 .team__details {
-    background: #1f2d30;
+    background: #375686;
     border-top: 1px solid #ffffff;
     padding: 23px 0;
     text-align: center;
@@ -731,19 +783,21 @@ About 2
 }
 
 .team__details h2 a:hover {
-    color: #375686; /* Highlight color on hover */
+    color: white; /* Highlight color on hover */
 }
 
 .team__details h4 {
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
-    margin-top: 10px;
+    margin-top: 10px; /* Existing margin */
     text-transform: capitalize;
+    padding: 4px 4px; /* Added padding */
+    border-radius: 5px; /* Optional: Add rounded corners */
 }
 
 .team:hover .team__details {
-    background: #375686; /* Highlight background on hover */
+    background: #377A43; /* Highlight background on hover */
 }
 
 .team:hover .team__hover__info {
@@ -1081,7 +1135,7 @@ About 2
     text-align: center;
 }
 .newsletter__wrap h2 {
-    color: #1f2d30;
+    color: #377A43;
     font-weight: 700;
     margin-bottom: 16px;
     text-transform: uppercase;
@@ -1121,7 +1175,7 @@ About 2
 }
 .subscribe__btn input {
     background: #375686 none repeat scroll 0 0;
-    border: 1px solid #fcc236;
+    border: 1px solid #377A43;
     color: #fff;
     font-family: Raleway;
     font-size: 12px;
@@ -1131,9 +1185,10 @@ About 2
     transition: all 0.3s ease 0s;
 }
 .subscribe__btn input:hover {
-    background: transparent none repeat scroll 0 0;
+    background: #377A43 none repeat scroll 0 0;
+
     border: 1px solid #000;
-    color: #000;
+    color: white;
 }
 .htc__newsletter__area {
     position: relative;
@@ -1979,7 +2034,7 @@ blockquote {
 
 .imagelogoonbackground{
     position: relative; 
-    bottom: 80px;
+    bottom: -442px;
      right: 0px;
       z-index: 2;
        float: right;
@@ -1996,68 +2051,192 @@ blockquote {
         display: none;    /* Hide the image on smaller screens */
     }
 }
-
-/* General styles */
+/* Background gradient for the section */
 .htc__offer__area {
-    margin-top: 10px;
+    background: linear-gradient(135deg, #375686, #377A43);
+    padding: 80px 0;
+    border-radius: 12px;
 }
 
-.core-values {
-    margin-top: 40px;
-    position: relative;
-    z-index: 1;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.5);
+/* Card Styling for Service Boxes */
+.offer {
+    background-color: #375686;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-}
-
-/* Heading styles */
-.chairman-heading,
-.core-values-heading {
     color: white;
     text-align: center;
-    margin-top: 20px;
+    padding: 30px;
+    margin: 15px 0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect */
+.offer:hover {
+    color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Offer Icon */
+.offer__icon img {
+    width: 70px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.offer:hover .offer__icon img {
+    transform: scale(1.2);
+}
+
+/* Heading Styling */
+.offer__details h2 {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Paragraph Styling */
+.offer__details p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to each card when in view */
+.card {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Background Image Overlay (Optional) */
+.offer::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 123, 255, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+.offer:hover::before {
+    top: -30%;
+    left: -30%;
+    background: rgba(33, 150, 243, 0.15);
+}
+
+.about {
+    height: 100%; /* Maintain full height */
+    background-image: url('images/about/1.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    position: relative; /* Relative positioning for child elements */
+    padding: 60px 0; /* Add top and bottom padding for spacing */
+}
+
+.about::before {
+    content: ""; /* Create a pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay with transparency */
+    z-index: 1; /* Position behind the content */
+}
+
+.chairman-heading {
+    color: #fff; /* White color for the heading */
+    font-size: 2.5rem; /* Larger font size for emphasis */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center the heading */
 }
 
 .message-title {
-    color: #f7f7f7;
+    font-size: 2rem; /* Font size for the message title */
+    color: #ffffff; /* White color */
+    margin-bottom: 15px; /* Space below the title */
+    text-align: center; /* Center the title */
 }
 
 .message-text {
-    color: #f7f7f7;
+    color: #ffffff; /* White color for message text */
+    font-size: 1rem; /* Standard font size for text */
+    line-height: 1.6; /* Increase line height for readability */
+    text-align: justify; /* Justify text for better alignment */
+    max-width: 800px; /* Maximum width for the paragraph */
+    margin: 0 auto; /* Center the paragraph */
 }
 
-/* Offer section styles */
+.core-values-heading {
+    color: #fff; /* White color */
+    font-size: 2rem; /* Font size for the core values heading */
+    margin: 40px 0; /* Space above and below */
+    text-align: center; /* Center the heading */
+}
+
+.chairman-heading,
+.message-title,
+.message-text,
+.core-values-heading {
+    color: #ffffff; /* White color for text */
+    position: relative; /* Ensure text is above the overlay */
+    z-index: 2; /* Position above the overlay */
+}
+.message-text {
+    max-width: 800px; /* Maximum width for the paragraph */
+    margin: 0 auto; /* Center the paragraph */
+    text-align: justify; /* Justify text for better alignment */
+}
 .offer {
-    margin-bottom: 20px; /* Adjust spacing between offers */
+    background: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the offer */
+    margin: 15px 0; /* Vertical margin between offers */
+    transition: transform 0.3s; /* Smooth hover effect */
+    z-index: 2; /* Position above the overlay */
+
+}
+
+.offer:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.offer__icon img {
+    width: 50px; /* Set icon size */
+    margin-bottom: 10px; /* Space below the icon */
 }
 
 .offer__details h2 {
-    color: #fff;
+    font-size: 1.5rem; /* Heading size for offer details */
+    color: #375686; /* Color for offer title */
+    margin-bottom: 10px; /* Space below the title */
 }
 
 .offer__details p {
-    color: #ddd;
+    color: #333; /* Darker text for offer description */
+    font-size: 0.9rem; /* Font size for offer description */
+    line-height: 1.4; /* Line height for readability */
 }
-
-/* Background image styles */
-.htc__offer__thumb {
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.about{
-    height: 100%;
-    background-image: url('about/1.jpg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9;
-    position: relative;
-}
-
 /* Hide on smaller screens */
 @media (max-width: 768px) {
     .image2back {
