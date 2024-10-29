@@ -53,6 +53,25 @@ $('.mobile-menu nav').meanmenu({
   03. Project  Masonry
 --------------------------------------------- */ 
 
+    function animateOnScroll() {
+        const headings = document.querySelectorAll('.section__title h2.title__line');
+
+        headings.forEach((heading, index) => {
+            const rect = heading.getBoundingClientRect();
+            const inView = rect.top <= window.innerHeight && rect.bottom >= 0;
+
+            if (inView && heading.style.visibility !== 'visible') {
+                heading.style.visibility = 'visible';
+                heading.classList.add(index % 2 === 0 ? 'slide-in-left' : 'slide-in-right');
+            }
+        });
+    }
+
+    // Attach event listeners
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+
+
 $('.htc__project__container').imagesLoaded( function() {
   
     // filter items on button click
