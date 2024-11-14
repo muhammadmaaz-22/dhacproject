@@ -549,9 +549,7 @@ About 2
     margin-bottom: 30px;
 }
 
-.title__line span {
-    color: #0056b3;
-}
+
 
 .title__line::after {
     content: '';
