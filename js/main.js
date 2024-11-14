@@ -177,7 +177,7 @@ if ($('.slider__activation__wrap').length) {
     margin: 0,
     nav: true,
     autoplay: true, // Set autoplay to true
-    autoplayTimeout: 3000, // Set autoplay delay to 2 seconds
+    autoplayTimeout: 5000, // Set autoplay delay to 2 seconds
     navText: [
       '<i class="zmdi zmdi-chevron-left"></i>', 
       '<i class="zmdi zmdi-chevron-right"></i>'
