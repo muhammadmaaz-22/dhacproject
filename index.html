@@ -1010,51 +1010,62 @@
       
         <!-- End Newsletter Area -->
         <!-- Start Google Map Area -->
-        <div class="map-contacts">
-            <div id="googleMap"></div>
-            <!-- Start Contact Address -->
-            <div class="htc__contact__address add-res htc__contact__address--2">
-                <div class="htc__contact__wrap clearfix">
-                    <!-- Start Single Address -->
-                    <div class="ht__address__inner">
-                        <div class="ht__address__icon map-pin">
-                            <i class="zmdi zmdi-pin"></i>
-                        </div>
-                        <div class="ht__address__details">
-                            <p>Suit #A601, 6th Floor, Shahnaz Arcade, <br> Main Shaheed-e-Milat Road, Karachi-Pakistan.</p><br>
-                            <p>RMDA3285, Al Dar Al Baida Dist. <br>  Al Kharj Road, Riyadh Saudi Arabia.</p><br>
-                            <p>Bldg. No. 2210, Sultanah,  <br>  Bir Uthman Al Madinah Al Munawarah Saudi Arabia.</p>
-
-
-                        </div>
+         <div class="map-contacts">
+            <div class="container">
+                <div class="row">
+                    <!-- Left Column: Custom Map -->
+                    <div class="col-md-8">
+                        <div class="map-title">Highlighted Locations in the Middle East</div>
+                        <div id="map" ></div>
                     </div>
-                    <!-- End Single Address -->
-                    <!-- Start Single Address -->
-                    <div class="ht__address__inner">
-                        <div class="ht__address__icon glob">
-                            <i class="fa fa-globe" aria-hidden="true"></i>
+        
+                    <!-- Right Column: Contact Details -->
+                    <div class="col-md-4">
+                        <!-- Start Contact Address -->
+                        <div class="htc__contact__address add-res htc__contact__address--2">
+                            <div class="htc__contact__wrap clearfix">
+                                <!-- Start Single Address -->
+                                <div class="ht__address__inner">
+                                    <div class="ht__address__icon map-pin">
+                                        <i class="zmdi zmdi-pin"></i>
+                                    </div>
+                                    <div class="ht__address__details">
+                                        <p>Suit #A601, 6th Floor, Shahnaz Arcade, <br> Main Shaheed-e-Milat Road, Karachi-Pakistan.</p><br>
+                                        <p>RMDA3285, Al Dar Al Baida Dist. <br> Al Kharj Road, Riyadh Saudi Arabia.</p><br>
+                                        <p>Bldg. No. 2210, Sultanah, <br> Bir Uthman Al Madinah Al Munawarah Saudi Arabia.</p>
+                                    </div>
+                                </div>
+                                <!-- End Single Address -->
+        
+                                <!-- Start Single Address -->
+                                <div class="ht__address__inner">
+                                    <div class="ht__address__icon glob">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ht__address__details">
+                                        <p><a href="mailto:info@dhac.com.pk">info@dhac.com.pk</a></p>
+                                        <p><a href="http://www.dhac.com.pk" target="_blank">www.dhac.com.pk</a></p>
+                                    </div>
+                                </div>
+                                <!-- End Single Address -->
+        
+                                <!-- Start Single Address -->
+                                <div class="ht__address__inner">
+                                    <div class="ht__address__icon">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ht__address__details">
+                                        <p><a href="tel:+922134123422">+92 21 34123422</a></p>
+                                        <p><a href="tel:+922134133422">+92 21 34133422</a></p>
+                                    </div>
+                                </div>
+                                <!-- End Single Address -->
+                            </div>
                         </div>
-                        <div class="ht__address__details">
-                            <p><a href="info@dhac.com.pk">info@dhac.com.pk </a></p>
-                            <p><a href="www.dhac.com.pk">www.dhac.com.pk</a></p>
-                        </div>
+                        <!-- End Contact Address -->
                     </div>
-                    <!-- End Single Address -->
-                    <!-- Start Single Address -->
-                    <div class="ht__address__inner">
-                        <div class="ht__address__icon">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                        </div>
-                        <div class="ht__address__details">
-                            <p><a href="#">+92 21 34123422</a></p>
-                            <p><a href="#">+92 21 34133422
-                            </a></p>
-                        </div>
-                    </div>
-                    <!-- End Single Address -->
                 </div>
             </div>
-            <!-- End Contact Address -->
         </div>
         <!-- End Google Map Area -->
    <!-- Start Footer Area -->
@@ -1224,11 +1235,75 @@
         color: #d3d3d3; /* Light color for contrast */
     }
 </style>
-<!-- Link Swiper's JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<!-- Link Swiper's JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+     
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
+<!-- Link Swiper's JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Link Swiper's JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  // Initialize map
+  // Initialize the map centered on the Middle East
+var map = L.map('map').setView([26.8206, 49.8245], 5); // Center on Middle East
+
+// Add OpenStreetMap tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+// Custom SVG icon creation function (Refined)
+function createCustomIcon(color) {
+    return L.divIcon({
+        className: 'custom-icon',
+        html: `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="${color}" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                <path d="M21 10c0 5.523-8 13-8 13s-8-7.477-8-13a8 8 0 1 1 16 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>`,
+        iconSize: [30, 30],  // Adjust size of the icon
+        iconAnchor: [15, 15], // Center the icon in the circle (half of iconSize)
+        popupAnchor: [0, -25]  // Adjust popup position for better layout
+    });
+}
+
+// Highlight circle style definition (ensures the circle is properly centered)
+const highlightStyle = {
+    color: '#f39c12', // Border color
+    fillColor: '#f1c40f', // Fill color
+    fillOpacity: 0.5,
+    weight: 2,
+    radius: 35, // Increased circle radius to make the circle larger around the icon
+    transition: 'fill-opacity 0.3s ease', // Smooth hover effect
+};
+
+// Add markers with custom icons and popups
+L.marker([24.7136, 46.673], { icon: createCustomIcon('#e67e22') }).addTo(map)
+    .bindPopup("<div class='custom-popup'><strong>📍 Riyadh, Saudi Arabia</strong><br>RMDA3285, Al Dar Al Baida Dist.<br>Al Kharj Road</div>")
+    .openPopup();
+
+L.marker([24.4667, 39.6142], { icon: createCustomIcon('#2ecc71') }).addTo(map)
+    .bindPopup("<div class='custom-popup'><strong>📍 Al Madinah Al Munawarah, Saudi Arabia</strong><br>Bldg. No. 2210, Sultanah<br>Bir Uthman</div>");
+
+L.marker([24.8607, 67.0011], { icon: createCustomIcon('#3498db') }).addTo(map)
+    .bindPopup("<div class='custom-popup'><strong>📍 Karachi, Pakistan</strong><br>Suit #A601, Shahnaz Arcade<br>Main Shaheed-e-Milat Road</div>");
+
+// Add highlight circles for each location (now correctly sized and centered around the icon)
+L.circleMarker([24.7136, 46.6753], {...highlightStyle, fillColor: '#e67e22', color: '#e67e22'}).addTo(map);
+L.circleMarker([24.4667, 39.6142], {...highlightStyle, fillColor: '#2ecc71', color: '#2ecc71'}).addTo(map);
+L.circleMarker([24.8607, 67.0011], {...highlightStyle, fillColor: '#3498db', color: '#3498db'}).addTo(map);
+
+// Optional: Make circle markers responsive with hover effect
+map.on('zoomend', function () {
+    const zoomLevel = map.getZoom();
+    const newRadius = zoomLevel >= 6 ? 35 : 25;  // Adjust radius based on zoom level
+    L.circleMarker([24.7136, 46.6753], {...highlightStyle, radius: newRadius, fillColor: '#e67e22', color: '#e67e22'}).addTo(map);
+    L.circleMarker([24.4667, 39.6142], {...highlightStyle, radius: newRadius, fillColor: '#2ecc71', color: '#2ecc71'}).addTo(map);
+    L.circleMarker([24.8607, 67.0011], {...highlightStyle, radius: newRadius, fillColor: '#3498db', color: '#3498db'}).addTo(map);
+});
+
+</script>
 <script>
     const swiper = new Swiper('.swiper-container', {
         slidesPerView: 4,
