@@ -467,13 +467,16 @@ About 2
     font-size: 16px;
 }
 #services-section {
-    background: #f5f5f5 url('\images\about\building.gif') no-repeat center center;
-    background-size: cover;
+    background: #f5f5f5 url('images/logo/background.png') no-repeat;
+    background-size: 70%; /* Adjust this percentage to control the size of the image */
+    background-position: right bottom; /* Position the image at the bottom-right */
     position: relative;
-    border-radius: 25px; /* Fully rounded corners for the button */
+    border-radius: 25px; /* Fully rounded corners for the section */
     padding: 10px 20px;
     font-size: 16px;
 }
+
+
 /* Optional: Hover effect for the button */
 #services-section .btn-rounded:hover {
     background-color: #0056b3; /* Darker blue on hover */
