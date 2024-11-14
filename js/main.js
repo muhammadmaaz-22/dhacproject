@@ -171,28 +171,32 @@ $('.project__menu button').on('click', function(event) {
   15. Home Slider
 -------------------------------------------------*/
 
-  if ($('.slider__activation__wrap').length) {
-    $('.slider__activation__wrap').owlCarousel({
-      loop: true,
-      margin:0,
-      nav:true,
-      autoplay: false,
-      navText: [ '<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
-      autoplayTimeout: 10000,
-      items:1,
-      dots: false,
-      lazyLoad: true,
-      responsive:{
-        0:{
-          items:1
-        },
-        600:{
-          items:1
-        }
+if ($('.slider__activation__wrap').length) {
+  $('.slider__activation__wrap').owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: true,
+    autoplay: true, // Set autoplay to true
+    autoplayTimeout: 3000, // Set autoplay delay to 2 seconds
+    navText: [
+      '<i class="zmdi zmdi-chevron-left"></i>', 
+      '<i class="zmdi zmdi-chevron-right"></i>'
+    ],
+    items: 1,
+    dots: false,
+    lazyLoad: true,
+    animateIn: 'fadeIn', // Add fade-in animation when the slide enters
+    animateOut: 'fadeOut', // Add fade-out animation when the slide leaves
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1
       }
-    });
-  }
-
+    }
+  });
+}
 
 
 /*-----------------------------------
