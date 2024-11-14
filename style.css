@@ -1721,72 +1721,59 @@ About 2
 ----------------------------------------*/
 
 
-.map-contacts{
+.map-contacts {
     position: relative;
+    margin-bottom: 30px;
+    background-color: #375686;
 }
-#googleMap {
-    height: 436px;
+
+#map {
+    height: 636px; /* Adjust the height of your custom map */
     width: 100%;
 }
+
+/* Address section */
 .htc__contact__address--2 {
     background: rgba(31, 45, 48, 0.92) none repeat scroll 0 0;
-    bottom: 0;
-    position: absolute;
-    right: 18%;
+    padding: 40px;
+    margin-top: 20px;
+    border-radius: 8px;
 }
-.htc__contact__address--2 .map-contacts {
-    position: relative;
-}
+
 .htc__contact__address--2 .htc__contact__wrap {
     display: block;
+    padding: 0;
 }
-.htc__contact__address--2 .htc__contact__wrap {
-    padding: 0 40px;
-}
+
 .htc__contact__address--2 .htc__contact__wrap .ht__address__inner + .ht__address__inner {
     margin-top: 40px;
 }
 
-/*---------------------------------------
-  15. Bradcaump Area
-----------------------------------------*/
-
-
-.ht__bradcaump__wrap {
-    align-items: center;
+.htc__contact__address--2 .ht__contact__wrap .ht__address__inner {
     display: flex;
-    height: 400px;
-    position: relative;
-    z-index: 2;
-}
-.bradcaump__inner h2.bradcaump-title {
-    color: #fdfdfd;
-    font-size: 50px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-.bradcaump-inner span {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.bradcaump-inner a {
-    font-family: Raleway;
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-.bradcaump-inner {
-    margin-top: 6px;
-}
-.brd-separetor {
-    padding: 0 7px;
-}
-.htc__bst__btn .htc__btn {
-    padding: 0 36px;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
+.htc__contact__address--2 .ht__contact__wrap .ht__address__inner .ht__address__icon {
+    font-size: 30px;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.htc__contact__address--2 .ht__contact__wrap .ht__address__inner .ht__address__details p {
+    color: #fff;
+    margin: 5px 0;
+}
+
+.htc__contact__address--2 .ht__contact__wrap .ht__address__inner .ht__address__details a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.htc__contact__address--2 .ht__contact__wrap .ht__address__inner .ht__address__details a:hover {
+    text-decoration: underline;
+}
 /*---------------------------------------
   16. Our Mission Area
 ----------------------------------------*/
