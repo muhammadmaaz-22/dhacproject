@@ -3150,6 +3150,7 @@ blockquote {
     max-width: 800px; /* Maximum width for the paragraph */
     margin: 0 auto; /* Center the paragraph */
     text-align: justify; /* Justify text for better alignment */
+    font-size: 20px;
 }
 .offer {
     background: rgba(255, 255, 255, 0.8); /* White background with some transparency */
@@ -3178,7 +3179,7 @@ blockquote {
 
 .offer__details p {
     color: #333; /* Darker text for offer description */
-    font-size: 0.9rem; /* Font size for offer description */
+    font-size: 1.01rem; /* Font size for offer description */
     line-height: 1.4; /* Line height for readability */
 }
 /* Hide on smaller screens */
